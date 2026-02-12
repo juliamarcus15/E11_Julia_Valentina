@@ -52,7 +52,7 @@ csvwriter=csv.writer(file,delimiter=',')
 meta=['time','data']
 csvwriter.writerow(meta)
 
-while True:
+for i in range (20):
     time.sleep(1)
 
     try:
