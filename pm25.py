@@ -58,6 +58,7 @@ while True:
     try:
         aqdata = pm25.read()
         print(aqdata)
+        csvwriter.writerow(aqdata)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
@@ -83,3 +84,5 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
+
+    file.close()
