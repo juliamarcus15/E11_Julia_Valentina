@@ -47,12 +47,17 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
+file=open('data_vF.csv','w',newline=None)
+csvwriter=csv.writer(file,delimiter=',')
+meta=['time','data']
+csvwriter.writerow(meta)
+
 while True:
     time.sleep(1)
 
     try:
         aqdata = pm25.read()
-        # print(aqdata)
+        print(aqdata)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
