@@ -49,16 +49,18 @@ print("Found PM2.5 sensor, reading data...")
 
 file=open('data_vF.csv','w',newline=None)
 csvwriter=csv.writer(file,delimiter=',')
-meta=['time','data']
+meta=['time','pm1', 'pm2.5', 'pm10']
 csvwriter.writerow(meta)
 
-for i in range (20):
+start_time = time.time()
+while time.time() - start_time <= 30:
     time.sleep(1)
 
     try:
+        data = [time.time()]
         aqdata = pm25.read()
-        print(aqdata)
-        csvwriter.writerow(aqdata)
+        data.append(aqdata)
+        csvwriter.writerow(data)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
