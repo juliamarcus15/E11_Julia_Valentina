@@ -64,7 +64,7 @@ for var in variables:
     plt.legend()
     plt.show()
 
-"""The weather data seems to be a lot more meaningful given that the particulate matter is more random and susceptible to small changes. The temperature data covered a lot larger of a spread for the Outdoor measurements, which if you look at the time series makes sense because as the sensor calibrated to outdoor temperature it steadily decreased. The Gas distribution follows a similar pattern, but the outdoor measurements were increimentally higher than the indoor measurements. Humidity was a lot higher outside which also makes sense given it rained earlier today. Air pressure corresponded to this higher humidity by being lower outside, also most likely attributed to the inclement weather. Finally, the altitude increased for the 'outdoor' measurements because a flight of stairs was taken to bring the sensor outdoors."""
+#The weather data seems to be a lot more meaningful given that the particulate matter is more random and susceptible to small changes. The temperature data covered a lot larger of a spread for the Outdoor measurements, which if you look at the time series makes sense because as the sensor calibrated to outdoor temperature it steadily decreased. The Gas distribution follows a similar pattern, but the outdoor measurements were increimentally higher than the indoor measurements. Humidity was a lot higher outside which also makes sense given it rained earlier today. Air pressure corresponded to this higher humidity by being lower outside, also most likely attributed to the inclement weather. Finally, the altitude increased for the 'outdoor' measurements because a flight of stairs was taken to bring the sensor outdoors.
 
 import pandas as pd
 
@@ -163,30 +163,6 @@ t5_mean_100um = trial5['100um'].mean()
 t5_std_100um = trial5['100um'].std()
 t6_mean_100um = trial6['100um'].mean()
 t6_std_100um = trial6['100um'].std()
-"""
-print("--- TEMPERATURE ---")
-print(f"Trial 5: Mean = {t5_mean_temp:.4f}, Std Dev = {t5_std_temp:.4f}")
-print(f"Trial 6: Mean = {t6_mean_temp:.4f}, Std Dev = {t6_std_temp:.4f}\n")
-
-print("--- PRESSURE ---")
-print(f"Trial 5: Mean = {t5_mean_pressure:.4f}, Std Dev = {t5_std_pressure:.4f}")
-print(f"Trial 6: Mean = {t6_mean_pressure:.4f}, Std Dev = {t6_std_pressure:.4f}\n")
-
-print("--- HUMIDITY ---")
-print(f"Trial 5: Mean = {t5_mean_humidity:.4f}, Std Dev = {t5_std_humidity:.4f}")
-print(f"Trial 6: Mean = {t6_mean_humidity:.4f}, Std Dev = {t6_std_humidity:.4f}\n")
-
-print("--- ALTITUDE ---")
-print(f"Trial 5: Mean = {t5_mean_altitude:.4f}, Std Dev = {t5_std_altitude:.4f}")
-print(f"Trial 6: Mean = {t6_mean_altitude:.4f}, Std Dev = {t6_std_altitude:.4f}\n")
-
-print("--- GAS ---")
-print(f"Trial 5: Mean = {t5_mean_gas:.4f}, Std Dev = {t5_std_gas:.4f}")
-print(f"Trial 6: Mean = {t6_mean_gas:.4f}, Std Dev = {t6_std_gas:.4f}\n")
-
-print("--- PM10 STANDARD ---")
-print(f"Trial 5: Mean = {t5_mean_pm10_std:.4f}, Std Dev = {t5_std_pm10_std:.4f}")
-
 
 
 #significance
