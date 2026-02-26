@@ -44,6 +44,7 @@ def read_bme680():
 arguments = sys.argv
 runtime = int(arguments[2])
 data_path = 'data/lab5_trial' + arguments[1]
+delay = int(arguments[3])
 
 file = open(data_path, 'w', newline = None)
 
@@ -56,10 +57,10 @@ meta = ['time', "pm10 standard", "pm25 standard", "pm100 standard",
 csvwriter.writerow(meta)
 
 start = time.time()
-while time.time() < start + 300:
+while time.time() < start + runtime:
 
 #for i in range(10):
-    time.sleep(2)
+    time.sleep(delay)
     try:
         now = time.time()
         aq = pm25.read() 
