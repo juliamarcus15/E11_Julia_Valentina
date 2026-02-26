@@ -57,10 +57,13 @@ meta = ['time', "pm10 standard", "pm25 standard", "pm100 standard",
 csvwriter.writerow(meta)
 
 start = time.time()
+time.sleep(delay)
+
+
 while time.time() < start + runtime:
 
 #for i in range(10):
-    time.sleep(delay)
+    time.sleep(2)
     try:
         now = time.time()
         aq = pm25.read() 
