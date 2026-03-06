@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-indoor = pd.read_csv('lab5_trial5.csv')
+indoor = pd.read_csv('data/lab5_trial5.csv')
 indoor = indoor.iloc[15:].reset_index(drop=True) #drop first 15 rows because the trials are 2 seconds apart -- we cut the first 30 seconds we were not yet outside
 
 # Convert time to seconds since start
