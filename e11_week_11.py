@@ -9,12 +9,12 @@ Original file is located at
 
 import sys
 sys.path.append('/home/pi/cape_mca') # capemca.py directory
-from capemca import CapeMCA
+from capemca import *
 import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-devices = find_all_mcas()
+devices = CapeMCA.find_all_mcas()
 print(f"Found {len(devices)} MCA device(s)")
 
 if not devices:
